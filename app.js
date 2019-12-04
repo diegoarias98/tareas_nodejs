@@ -10,9 +10,10 @@ switch (comando) {
         console.log(tarea);
         break;
     case 'listar':
-        let listado = tareas.getLista(argv.completado);
+        let listadob = argv.listar === 'true';
+        let listado = tareas.getLista();
         for (let tarea of listado) {
-            if (listado === true){
+            if (tarea.completado === listadob) {
                 console.log("======= POR HACER =====".green);
                 console.log(tarea.descripcion);
                 console.log("Estado: ", tarea.completado);
